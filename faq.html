@@ -1,0 +1,102 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Collapsing MCQs</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .question {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .collapsible {
+            width: 100%;
+            padding: 15px;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .collapsible:hover {
+            background-color: #2980b9;
+        }
+
+        .content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .answer {
+            margin-top: 10px;
+        }
+
+        .active {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="question">
+        <button class="collapsible">Question 1: What is Coding?</button>
+        <div class="content">
+            <p class="answer">Coding creates a set of instructions for computers to follow. These instructions determine what actions a computer can and cannot take. Coding allows programmers to build programs, such as websites and apps. Computer programmers can also tell computers how to process data in better, faster ways.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <button class="collapsible">Question 2: What is Coding skills?</button>
+        <div class="content">
+            <p class="answer">Coding skills, also known as programming skills, are the knowledge and understanding of languages, frameworks, and architecture that enables a coder to create any digital product. In a digitally-connected world, coding skills influence nearly all aspects of human life. </p>
+        </div>
+    </div>
+
+    <!-- Add more questions as needed -->
+
+</div>
+
+<script>
+    var coll = document.querySelectorAll('.collapsible');
+
+    coll.forEach(function (item) {
+        item.addEventListener('click', function () {
+            this.classList.toggle('active');
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
